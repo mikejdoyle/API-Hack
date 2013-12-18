@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MovieFind</title>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width, initial-scale =1.0">
+    <script src="./lib/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/cssreset.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <script src="./lib/angular.min.js" language="JavaScript" type="text/javascript"></script>
+    <script src="./lib/angular-animate.js" language="JavaScript" type="text/javascript"></script>
+    <script src="./lib/jquery-2.0.3.min.js" language="JavaScript" type="text/javascript"></script>
+    <script src="./js/API-hack.js" type="text/javascript"></script>
+</head>
+<body>
+    //Rotten Tomato API Key
+    //y6b9ytcux4tjc8x4dmkkqcug
+    <script>
+    $.ajax({
+        url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/upcoming.json',
+        data: {
+            apikey: 'y6b9ytcux4tjc8x4dmkkqcug'
+              },
+        type: 'GET',
+        dataType: 'jsonp',
+        headers: 'Access-Control-Allow-Origin: *',
+        success: function(data){
+        console.log('Success',data);console.log('Success',data.movies[0].title.replace(/\s/g, "") );
+               },
+    error: function(data){
+               }
+
+});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+/**
+ *
+ * FLIXSTER THEME
+ *
+ * Check out http://support.mashery.com/public/Mashery/styles/masherycssfw.src.css to see the base structural defaults.
+ * You can find documentation on customizing your portal at http://support.mashery.com/docs/Customizing_Your_Portal
+ * We discourage making major changes to the layout since it has a standard structure to it which is easy for users
+ * to use.
+ *
+ */
+body {
+  font: 12px/16px Arial, Helvetica, sans-serif;
+  background: url(/public/Mashery/images/clients/flixster/bg-clouds.png) no-repeat fixed center top #a8d5f9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #CF4400;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  color: #CF4400;
+  font-size: 15px;
+}
+
+a {
+  color: #285CAB;
+}
+
+a:hover,
+a:active {
+  color: #3C7EE2;
+  text-decoration: underline;
+}
+
+/* All the input fields (text input, textareas, selects) */
+table thead th {
+  border-bottom: 1px solid #999;
+}
+
+table td {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Set the overall width */
+div#page,
+div#header,
+div#content,
+div#local,
+div#user,
+div#user-menu,
+div#footer {
+  width: 1010px;
+}
+
+/* For pages without navigation (you can set which pages you do not want to have navigation on, for whatever reason) */
+/* For pages without a side column, you can set which pages do or do not have side columns. */
+div#page.no_sub div#main {
+  width: 978px;
+}
+
+/** 
+ * 
+ * HEADER
+ * 
+ * The header is where your logo, login links, search, and user control links should go.
+ *
+ */
+div#header {
+  height: 97px;
+  margin-bottom: 20px;
+  background: url("/public/Mashery/images/clients/flixster/rt.png") no-repeat 0 -62px;
+}
+
+div#search {
+  z-index: 999;
+  top: 50px;
+  right: auto;
+  left: 180px;
+}
+div#search input#search-box {
+  padding: 6px 20px 5px 5px;
+  width: 176px;
+  border: 0;
+  font: 600 12px/1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  background: white url(/public/Mashery/images/clients/flixster/magni_glass.png) no-repeat 100% -16px;
+}
+div#search select,
+div#search input#search-button {
+  display: none;
+}
+
+/* Here is where you put your logo! Yes, it is the background of a div. This div is special because Javascript makes it behave
+   like a Home link by default, you can change this in the settings if you absolutely must.
+   
+   You must change the width and height of this div to the same size as your logo. */
+div#branding-logo {
+  background: url("/public/Mashery/images/clients/flixster/rt.png") no-repeat 0 0;
+  margin: 28px 0 0 16px;
+  width: 147px;
+  height: 62px;
+}
+
+div#branding-mashery {
+  top: 44px;
+}
+
+/* END HEADER */
+/**
+ *
+ * USER
+ *
+ * User information and actions
+ *
+ */
+div#user {
+  position: absolute;
+  top: 0;
+  border-bottom: 1px solid #67A333;
+  /*            position: relative; This causes issues in IE6 */
+}
+
+/**
+ *
+ * USER NAV
+ *
+ * Login, logout, register, and My Account links.
+ *
+ */
+div#user-nav {
+  top: 0;
+  padding-bottom: 2px;
+  margin: 2px 0 0 0;
+  /* Use top margin to move this around when you can. */
+  text-align: right;
+  float: none;
+  border-bottom: 1px solid #3A7E00;
+}
+
+div#user-nav ul li {
+  float: none;
+  line-height: 20px;
+}
+
+/* The user's name, "Signed in as Wally Wombat" */
+div#user-nav a {
+  color: #fded00;
+}
+div#user-nav a:hover {
+  color: #fff;
+}
+
+/* END USER NAV */
+/* END USER */
+/**
+ *
+ * LOCAL NAV
+ *
+ * This is the main navigation bar. You can customize your links in the Settings page.
+ *
+ * The div#local appears AFTER the content for accessbility reasons. Please see
+ * http: //www.contentwithstyle.co.uk/Articles/17/ for details.
+ *
+ * Because the navigation is placed below the content, you will most likely need
+ * to use absolute positioning. Please make sure you understand positioning before
+ * trying to customize it!
+ *
+ */
+div#local {
+  text-align: right;
+  top: -70px;
+  left: auto;
+  right: 150px;
+  width: 500px;
+}
+
+div#local li {
+  float: none;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+}
+div#local li {
+  *display: inline;
+}
+
+div#local li a {
+  color: #fded00;
+  font-weight: 600;
+  padding: 6px 15px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+div#local a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* END LOCAL NAV */
+/**
+ *
+ * USER MENU
+ *
+ * The User Menu contains actions for the user: Start New Entry, New Post, etc.
+ * 
+ */
+/**
+ *
+ * SUB LOCAL NAVIGATION
+ *
+ * Links under each primary navigation section.
+ *
+ */
+div#user-menu {
+  display: none;
+}
+
+/* END SUBLOCAL NAV */
+/* END USER MENU */
+/**
+ *
+ * CONTENT 
+ *
+ * Where the magic happens (Content of page)
+ *
+ */
+div#content {
+  width: 1000px;
+  padding: 5px 5px 110px;
+  background-color: #d3eafc;
+  background: rgba(255, 255, 255, 0.5) url("/public/Mashery/images/clients/flixster/rt.png") no-repeat -1010px 100%;
+  overflow: visible;
+  *zoom: 1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+}
+div#content:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/**
+ *
+ * MAIN
+ *
+ * This is where almost all the content for every page is.
+ *
+ */
+div#main {
+  margin: 0;
+  padding: 10px;
+  width: 738px;
+  border: 1px solid #D6D6D6;
+  background: #fff;
+}
+
+/**
+ *
+ * BLOG, WIKI, FORUM, and DOCS
+ *
+ * Styling for the sections, meta info, file tables, and other parts of these apps.
+ *
+ * Remember, there are usually different states of each app type! For example, when browsing the forum the body will have
+ * an id of #page-forum and a class of .browse. If you click on a forum post to view it, the body will still have the same
+ * id, but the class will change to .read. This way you can control the different views of each app.
+ *
+ */
+/* Comments in all sections except the forum. */
+div#main div.comments ol li.comment {
+  border: 1px solid #ccc;
+}
+
+/**
+ *
+ * FORUM
+ *
+ * The forum is very different than the blog, wiki, docs, etc. Be sure to check out the markup, the default styling
+ * should be ok for most people, but you may need to override some of your list (ul, ol) rules that you set in this
+ * stylesheet.
+ *
+ */
+/* The "Start new topic" button */
+/* Subject of a thread */
+/* The "original post" in each thread looks different by default */
+/* END FORUM */
+/* END BLOG, WIKI, FORUM, and DOCS */
+/* END MAIN */
+/**
+ *
+ * SUB
+ *
+ * The sub div is usually the small sidebar on the blog/wiki/forum, although some may prefer to hide it altogether.
+ *
+ * In the Dashboard, the sub is also where the form lives to add new content in the Content page.
+ *
+ */
+div#sub {
+  width: 213px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #D6D6D6;
+  background: #fff;
+}
+
+/* END SUB */
+/* END CONTENT */
+/**
+ *
+ * FOOTER
+ *
+ * Contains your site-info as well as your footer links.
+ * 
+ */
+div#footer {
+  background: transparent url("/public/Mashery/images/clients/flixster/rt.png") no-repeat 100% -89px;
+  height: 50px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+div#footer ul li a {
+  color: #fded00;
+}
+div#footer ul li a:hover {
+  color: #fff;
+}
+
+/**
+ *
+ * SITEINFO
+ *
+ * The siteinfo you can edit from the Settings page in the Dashboard.
+ * Usually this contains copyright stuff and credits.
+ *
+ */
+div#siteinfo {
+  font-size: 11px;
+  color: #719656;
+}
+
+/* END SITEINFO */
+/* END FOOTER */
+/* END FLIXSTER THEME */
