@@ -1,40 +1,34 @@
 //file:///Users/michaeldoyle/coding_projects/API-Hack/index.html
 
-var qs =[
-  {
-    question: "Thank you for the cookies. I look forward to tossing them",
-    choices:  ["Twins", "The Running Man", "Batman and Robin", "Predator"],
-    correct:  "Twins",
-    image: "http://assets.nydailynews.com/polopoly_fs/1.1113853!/img/httpImage/image.jpg_gen/derivatives/landscape_635/m8dtwin-ec001-h-web.jpg"
-  },
+$(document).ready(function () {
 
-  {
-    question: "Don't disturb my friend, he's dead tired.",
-    choices:  ["Last Action Hero", "Commando", "Conan the Barbarian", "Predator"],
-    correct:  "Commando",
-    image: "https://static.squarespace.com/static/51b3dc8ee4b051b96ceb10de/51ce6099e4b0d911b4489b79/51ce61efe4b0d911b44a69de/1272517437147/1000w/commando5.jpg"
-  },
+var movies = [];
 
-  {
-    question: "I'm the famous comedian Arnold Braunschweiger.",
-    choices:  ["Twins", "Junior", "Last Action Hero", "Raw Deal"],
-    correct:  "Last Action Hero",
-    image: "http://www.empireonline.com/images/uploaded/arnold-schwarzenegger-last-action-hero.jpg"
-  },
+$.ajax({
+    url: 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/upcoming.json',
+    data: {
+        apikey: 'y6b9ytcux4tjc8x4dmkkqcug'
+    },
+    type: 'GET',
+    dataType: 'jsonp',
+    success: function(data){
+        //console.log('Success',data.movies[0].title.replace(/\s/g, "") );
+        console.log('Success',data.movies);
+        movies = data;
+    },
+    error: function(data){
+        console.log('Error',data);
+    }
+});
 
-  {
-    question: "If I am not me, then who the hell am I?",
-    choices:  ["Total Recall", "Terminator 3: Rise of the Machines", "Commando", "The Running Man"],
-    correct:  "Total Recall",
-    image: "http://cdn.wegotthiscovered.com/wp-content/uploads/Total-Recall-Blu-Review-Pic-2-670x360.jpg"
-  },
+//Add ability for users to modify criteria
+//Once modified parse through movie list
+//Display new movie list
 
-  {
-    question: "Hasta la vista, baby!",
-    choices:  ["The Terminator", "Terminator 2 Judgement Day", "Kindergarden Cop", "Commando"],
-    correct:  "Terminator 2 Judgement Day",
-    image: "http://www.mostlybymotorcycle.com/wp-content/uploads/2012/02/Arnie.jpg"
-  }];
+}
+
+
+
 
 function preloadImages(array) {
    if (!preloadImages.list) {
