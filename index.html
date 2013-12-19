@@ -27,16 +27,19 @@
                 a bad movie choice!
             </p>
 
-        My Movie Must fit the following criteria :
-        DVD or Movie
-        Current release opening, or Upcoming
-        Genre:
-        Rating:
-        Length:
-        Tomatoes score:
-        Audience score:
-        Starring:
-        Director:
+            <div class= "form" ng-controller="mctrl">
+            <form ng-submit = "submitFilter()">
+              <input type="text" placeholder= "60 or Above">
+              <input type ="submit" class="btn-primary">
+              <input ng-click= "clear()" type ="button"  value= "Clean Up" class="btn-primary clean" >
+            </form>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="movie in movies">
+                    <span>{{movie.title}}</span></li>
+            </ul>
+        </div>
+
+
         </div>
      </div>
 </body>
