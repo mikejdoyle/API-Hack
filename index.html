@@ -16,30 +16,32 @@
         y6b9ytcux4tjc8x4dmkkqcug-->
     </head>
 <body>
-    <div id="container">
-        <h1 class="title">
+    <div class="jumbotron" ng-app>
+        <h2 class="title">
         WHAT MOVIE SHOULD I SEE?
-        </h1>
+        </h2>
+        <h3 class="title">
+         (AND IT BETTER BE GOOD!)
+        </h3>
         <div>
-            <p class="intro">Hey, do you want to know what showing at the movies that's actually worth seeing?
-                Well, now you don't have to wonder? Just Enter your minimal acceptabal rotten tomatoe score and I'll let you know
-                which movies opening this weekend meet or exceed that score., so you don't have to waste time being tempted by
-                a bad movie choice!
+            <p class="intro">Hey, do you want to know what's showing at the movies that's actually worth seeing?
+                Well, now you don't have to wonder? Just enter the least acceptable Rotten Tomatoes score and
+                I'll just show you the movies opening this weekend meet or exceed that score. That way you don't
+                have to waste time being tempted to go see what is just going to be another terrible night at the
+                movies, not to mention a waste of your hard earned cash!!
             </p>
-
             <div class= "form" ng-controller="mctrl">
             <form ng-submit = "submitFilter()">
-              <input type="text" placeholder= "60 or Above">
+              <input type="text" placolder= "75 or Higher">
               <input type ="submit" class="btn-primary">
-              <input ng-click= "clear()" type ="button"  value= "Clean Up" class="btn-primary clean" >
             </form>
+            </div>
+            <div class="result">
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="movie in movies">
                     <span>{{movie.title}}</span></li>
             </ul>
-        </div>
-
-
+            </div>
         </div>
      </div>
 </body>

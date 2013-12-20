@@ -11,7 +11,6 @@ function mctrl ($scope){
     type: 'GET',
     dataType: 'jsonp',
     success: function(data){
-        //console.log('Success',data.movies[0].title.replace(/\s/g, "") );
         console.log('Success',data.movies);
         $scope.movies = data.movies;
     },

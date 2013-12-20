@@ -1,5 +1,19 @@
+.jumbotron{
+  width: 800px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+}
 
-
+.title{
+  height: 30px;
+  width: 500px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+}
 
 
 
