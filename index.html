@@ -21,8 +21,8 @@
         <div class ="row">
             <div class = "col-md-3">
                 <ul class="list-group">
-                      <li class="list-group-item" ng-repeat="movie in movielist | filter: scoreMatch() | orderBy:audienceScore" >
-                          <img ng-src="{{movie.posters.profile}}"/>
+                      <li class="list-group-item postersleft" ng-repeat="movie in movielist | filter: scoreMatch() | orderBy:audienceScore" >
+                          <img ng-src="{{movie.posters.detailed}}"/>
                       </li>
                     </ul>
             </div>
@@ -34,29 +34,36 @@
                      (AND IT BETTER BE GOOD!)
                 </h3>
 
-                <p class="intro">Hey, do you want to know what's showing at the movies that's actually worth seeing?
-                    Well, now you don't have to wonder? Just enter the least acceptable Rotten Tomatoes score and
-                    I'll just show you the movies opening this weekend meet or exceed that score. That way you don't
-                    have to waste time being tempted to go see what is just going to be another terrible night at the
-                    movies, not to mention a waste of your hard earned cash!!
+                <p class="intro">Hey, do you want to know what's playing in theaters this weekend
+                    -that's actually WORTH seeing? Or maybe you just want to make an good impression on a first date.
+                    Well, now you can just enter your least acceptable Rotten Tomatoes critics
+                    score below, and you'll get a listing of opening movies that meet
+                    or exceed that score. So, don't waste time watching yet another terrible movie,
+                    instead be confident you chose a movie based not on some marketing hype,
+                    but rather on what respected critics are actually recommending.
                 </p>
                 <div class= "form">
                     <form ng-submit = "setMinScore()">
-                      <input type="text" placeholder= "75 or Above" class="value" ng-model='userMin'>
+                      <input type="text" placeholder= "1 to 100" class="value" ng-model='userMin'>
                       <input type ="submit" class="btn-primary">
                       <input ng-click= "clear()" type ="button"  value= "Clean Up" class="btn-primary clean" >
                     </form>
-                    <div class ="error" ng-show="isEmpty"> There is no Movie up to your high standards. Try a lower score please"</div>
+                    <div class ="error" ng-show="isEmpty"> There is no Movie up to your high standards. This might be a good weekend to just stay home."</div>
                     <ul class="list-group">
-                      <li class="list-group-item" ng-repeat="movie in movielist | filter: scoreMatch() | orderBy:audienceScore" >
-                        My #{{$index + 1}} pick is {{movie.title}}, which has a score of {{movie.ratings.audience_score}}
+                      <li class="list-group-item" ng-repeat="movie in movielist | filter: scoreMatch() | orderBy:audienceScore">
+                          <h4>My #{{$index + 1}} pick is {{movie.title}}, which has a score of {{movie.ratings.audience_score}}</h4>
+                       {{movie.synopsis}}
                       </li>
                     </ul>
-                </div>
+                  </div>
               </div>
               <div class = "col-md-3">
-
-              </div>
+                <ul class="list-group">
+                      <li class="list-group-item postersright" ng-repeat="movie in movielist | filter: scoreMatch() | orderBy:audienceScore" >
+                          <img ng-src="{{movie.posters.detailed}}"/>
+                      </li>
+                    </ul>
+            </div>
         </div>
 </body>
 </html>

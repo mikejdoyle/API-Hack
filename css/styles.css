@@ -1,3 +1,7 @@
+body{
+  background-color: black;
+}
+
 .title{
   height: 30px;
   width: 500px;
@@ -12,10 +16,30 @@
 }
 
 .value {
-  width: 145px;
+  width: 100px;
 }
 
 .col-md-6{
   background-color: #99CCCC;
   margin-top: 30px;
+}
+
+.intro{
+font-weight: bold;
+}
+
+.postersleft{
+  margin-top: 30px;
+  float: right;
+  background-color: #99CCCC;
+}
+
+.postersright{
+  margin-top: 30px;
+  background-color: #99CCCC;
+  width: 213px;
+}
+
+.list-group-item{
+  margin-top: 20px;
 }
